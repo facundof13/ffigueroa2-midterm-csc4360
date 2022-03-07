@@ -14,6 +14,7 @@ class SelectUsersViewModel: ObservableObject {
 
     @Published var otherUsers : [ChatUser]?
     @Published var completed = false
+    @Published var newConversation : Conversation?
     
     func fetchUsers(avm : AuthenticationViewModel) {
         if (avm.user == nil) {
@@ -56,7 +57,7 @@ class SelectUsersViewModel: ObservableObject {
                 return conversation.users!.count == users.count && conversation.users!.sorted() == users.sorted()
             }).count > 0 {
                 print("conversation exists, not creating")
-                return
+                self.newConversation = allConversations.first
             } else {
                 print("conversation does not exist")
                 let conversation = Conversation(users: users, creationDate: Date(), userDisplayNames: displayNames)
@@ -66,7 +67,7 @@ class SelectUsersViewModel: ObservableObject {
                         if error != nil {
                             print(error!.localizedDescription)
                         }
-                        return
+                        self.newConversation = conversation
                     }
                 } catch {
                     print(error.localizedDescription)

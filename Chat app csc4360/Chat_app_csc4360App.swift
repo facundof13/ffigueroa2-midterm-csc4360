@@ -46,11 +46,13 @@ struct ApplicationSwitcher : View {
                     Label("Search", systemImage: "magnifyingglass")
                 }
                 
-                NavigationView {
-                    ProfileView()
-                }
-                .tabItem {
-                    Label("My Profile", systemImage: "person")
+                if avm.user != nil {
+                    NavigationView {
+                        ProfileView(chatUser: avm.user!)
+                    }
+                    .tabItem {
+                        Label("My Profile", systemImage: "person")
+                    }
                 }
 
             }

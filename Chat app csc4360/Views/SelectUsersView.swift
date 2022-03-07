@@ -30,12 +30,7 @@ struct SelectUsersView: View {
             }
         }
         .onAppear(perform: {
-            selectUsersViewModel.fetchUsers(avm: self.avm)
-            
-            DispatchQueue.main.async {
-                self.presentation.wrappedValue.dismiss()
-            }
-            
+            selectUsersViewModel.fetchUsers(avm: self.avm)           
         })
     
             Button(action:{
@@ -46,6 +41,13 @@ struct SelectUsersView: View {
             }.disabled(selectedUsers!.count <= 0)
                 .padding()
             
+        }
+        .onChange(of: selectUsersViewModel.newConversation) { newValue in
+            DispatchQueue.main.async {
+                self.presentation.wrappedValue.dismiss()
+            }
+            
+                            
         }
     }
     

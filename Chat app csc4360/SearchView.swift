@@ -21,7 +21,7 @@ struct SearchView: View {
                     searchViewModel.search(input: newValue, avm: avm)
                 }
             List(searchViewModel.searchResults ?? []) { chatUser in
-                NavigationLink(chatUser.displayName, destination: ChatUserView(chatUser: chatUser))
+                NavigationLink(chatUser.displayName, destination: ProfileView(chatUser: chatUser))
                 
             }
             .navigationTitle("Search")

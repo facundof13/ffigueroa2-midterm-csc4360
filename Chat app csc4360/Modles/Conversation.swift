@@ -9,7 +9,11 @@ import Foundation
 import FirebaseFirestoreSwift
 
 
-class Conversation: Identifiable, Codable {    
+class Conversation: Identifiable, Codable, Equatable {
+    static func == (lhs: Conversation, rhs: Conversation) -> Bool {
+        return lhs.uid == rhs.uid
+    }
+    
     @DocumentID public var uid: String?
     public var users: [String]?
     public var creationDate: Date?

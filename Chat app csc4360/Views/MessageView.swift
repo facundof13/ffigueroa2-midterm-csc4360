@@ -71,7 +71,7 @@ struct MessageView: View {
                     Image(systemName: "arrow.up.message.fill")
                         .clipShape(Circle())
                 }
-            }.padding(.horizontal, 16)
+            }.padding(.all, 16)
         }
         .onAppear {
             messageViewModel.getMessages(conversation: self.conversation)
