@@ -10,7 +10,7 @@ import SwiftUI
 struct ConversationView: View {
     @EnvironmentObject var avm: AuthenticationViewModel
     @StateObject private var conversationViewModel = ConversationViewModel()
-    @State private var confirmationShown : Bool = false
+
     
     private var formatter = RelativeDateTimeFormatter()
     
@@ -22,7 +22,9 @@ struct ConversationView: View {
                 } label: {
                     VStack {
                         Text(conversation.userDisplayNames!.joined(separator: ", "))
+                            .padding(.all, 5)
                         Text(self.formatter.localizedString(for: conversation.creationDate!, relativeTo: Date()))
+                            .padding(.all, 5)
                     }
                     
                 }
@@ -30,33 +32,11 @@ struct ConversationView: View {
         }
         .navigationTitle("Conversations")
         .toolbar {
-            
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action:{
-                    confirmationShown = true
-                }) {
-                    HStack {
-                        Image(systemName: "arrow.left.circle.fill")
-                        Text("Logout")
-                    }
-                }
-            }
-            
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: SelectUsersView()) {
                     Image(systemName:"square.and.pencil")
                 }
-            }
-           
-            
-        }
-        .alert("Are you sure you want to sign out?", isPresented: $confirmationShown) {
-            Button(role: .destructive, action:{
-                confirmationShown = false
-                avm.signOut()
-            }) {
-                Text("Yes")
-            }
+            }   
         }
         .onAppear(perform:{conversationViewModel.getConversations(avm: avm)})
     }
