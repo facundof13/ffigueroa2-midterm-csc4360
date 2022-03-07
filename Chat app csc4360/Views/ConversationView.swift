@@ -12,8 +12,6 @@ struct ConversationView: View {
     @StateObject private var conversationViewModel = ConversationViewModel()
 
     
-    private var formatter = RelativeDateTimeFormatter()
-    
     var body: some View {
         List(conversationViewModel.conversations ?? []) { conversation in
             HStack {
@@ -21,12 +19,9 @@ struct ConversationView: View {
                     MessageView(conversation: conversation)
                 } label: {
                     VStack {
-                        Text(conversation.userDisplayNames!.joined(separator: ", "))
-                            .padding(.all, 5)
-                        Text(self.formatter.localizedString(for: conversation.creationDate!, relativeTo: Date()))
+                        Text(conversation.userDisplayNames!.filter { $0 != avm.user?.displayName }.sorted().joined(separator: ", "))
                             .padding(.all, 5)
                     }
-                    
                 }
             }
         }

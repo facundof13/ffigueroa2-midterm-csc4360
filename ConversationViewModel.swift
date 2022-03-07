@@ -31,7 +31,7 @@ class ConversationViewModel: ObservableObject {
                     return try document.data(as: Conversation.self)
                 }.sorted(by: {$0.creationDate!.compare($1.creationDate!) == .orderedDescending})
             }catch{
-                print(error)
+                print(error.localizedDescription)
             }
             
         })

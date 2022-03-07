@@ -39,13 +39,12 @@ class ChatUserViewModel:ObservableObject {
                         self.review = nil
                     }
                 }catch{
-                    print(error)
+                    print(error.localizedDescription)
                 }
             })
     }
     
     func postRating(review: Review) {
-        print(review)
         do {
             try db.collection("rating").document().setData(from: review) { error in
                 if error != nil {
@@ -104,7 +103,7 @@ class ChatUserViewModel:ObservableObject {
                                     
                                     db.collection("images").whereField("userUid", isEqualTo: avm.user!.uid!).getDocuments(completion: { querySnapshot, error in
                                         if let error = error {
-                                            print(error)
+                                            print(error.localizedDescription)
                                             return
                                         }
                                         

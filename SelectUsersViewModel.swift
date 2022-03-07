@@ -36,14 +36,12 @@ class SelectUsersViewModel: ObservableObject {
                     
                     
                 }catch{
-                    print(error)
+                    print(error.localizedDescription)
                 }
             })
     }
     
     func createConversation(avm: AuthenticationViewModel, users: [String], displayNames: [String]) {
-        print(users)
-        
         db.collection("conversation").getDocuments { (querySnapshot, error) in
             if error != nil {
                 print(error!.localizedDescription)
@@ -56,10 +54,8 @@ class SelectUsersViewModel: ObservableObject {
             if allConversations.filter({ conversation in
                 return conversation.users!.count == users.count && conversation.users!.sorted() == users.sorted()
             }).count > 0 {
-                print("conversation exists, not creating")
                 self.newConversation = allConversations.first
             } else {
-                print("conversation does not exist")
                 let conversation = Conversation(users: users, creationDate: Date(), userDisplayNames: displayNames)
                 
                 do {
