@@ -10,6 +10,7 @@
 		ED00640927D6ACA400FCE80D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00640827D6ACA400FCE80D /* LocationManager.swift */; };
 		ED00640B27D6BB2A00FCE80D /* ChatUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00640A27D6BB2A00FCE80D /* ChatUserLocation.swift */; };
 		ED00640D27D6BB7800FCE80D /* ChatUserLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00640C27D6BB7800FCE80D /* ChatUserLocationViewModel.swift */; };
+		ED00640F27D6CE7700FCE80D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ED00640E27D6CE7700FCE80D /* README.md */; };
 		ED65395B27D5EC1F0002EF33 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65395A27D5EC1F0002EF33 /* SearchView.swift */; };
 		ED65395F27D5EFC80002EF33 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65395E27D5EFC80002EF33 /* SearchViewModel.swift */; };
 		ED65396127D5F1BA0002EF33 /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65396027D5F1BA0002EF33 /* ChatUserView.swift */; };
@@ -49,6 +50,7 @@
 		ED00640827D6ACA400FCE80D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		ED00640A27D6BB2A00FCE80D /* ChatUserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatUserLocation.swift; path = "Chat app csc4360/ChatUserLocation.swift"; sourceTree = SOURCE_ROOT; };
 		ED00640C27D6BB7800FCE80D /* ChatUserLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatUserLocationViewModel.swift; path = "Chat app csc4360/Modles/ChatUserLocationViewModel.swift"; sourceTree = "<group>"; };
+		ED00640E27D6CE7700FCE80D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ED65395A27D5EC1F0002EF33 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = "Chat app csc4360/SearchView.swift"; sourceTree = SOURCE_ROOT; };
 		ED65395E27D5EFC80002EF33 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = "Chat app csc4360/Views/SearchViewModel.swift"; sourceTree = "<group>"; };
 		ED65396027D5F1BA0002EF33 /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = SOURCE_ROOT; };
@@ -107,6 +109,7 @@
 		EDCA358127CD3110008AE631 = {
 			isa = PBXGroup;
 			children = (
+				ED00640E27D6CE7700FCE80D /* README.md */,
 				EDCA358C27CD3110008AE631 /* Chat app csc4360 */,
 				EDCA358B27CD3110008AE631 /* Products */,
 				EDA7051327CEE9BA00470FCA /* Frameworks */,
@@ -264,6 +267,7 @@
 			files = (
 				EDCA359527CD3111008AE631 /* Preview Assets.xcassets in Resources */,
 				EDCA359227CD3111008AE631 /* Assets.xcassets in Resources */,
+				ED00640F27D6CE7700FCE80D /* README.md in Resources */,
 				ED95302C27D5B3E700DB2511 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
